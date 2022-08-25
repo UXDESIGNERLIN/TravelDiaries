@@ -1,5 +1,8 @@
 <template>
   <div class="Home">
+     <teleport to='#modal-area' v-if="showModal" >
+      <Modal @close="toggleModal" :showModal="showModal"/>
+    </teleport>
     <div class="Home__DiaryCardContainer">
       <router-link
         :to="{ name: 'DiaryDetail', params: { id: card.id } }"
@@ -16,11 +19,13 @@
 <script>
 import { ref, computed, onMounted } from 'vue'
 import { useStore } from 'vuex'
+import Modal from '@/components/Modal';
 import DiaryCard from '@/components/DiaryCard'
 
 export default {
   name: 'Home',
   components: {
+    Modal,
     DiaryCard
   },
   setup () {
