@@ -1,7 +1,7 @@
 <template>
   <div class="Home">
      <teleport to='#modal-area' v-if="showModal" >
-      <Modal @close="toggleModal" :showModal="showModal"/>
+      <Modal @close="closeModal" :showModal="showModal"/>
     </teleport>
     <div class="Home__DiaryCardContainer">
       <router-link
@@ -12,14 +12,14 @@
         <DiaryCard :card="card"/>
       </router-link>
     </div>
-    <div class="Home__add" @click="toggleModel"><p>+</p></div>
+    <div class="Home__add" @click="openModal"><p>+</p></div>
   </div>
 </template>
 
 <script>
 import { ref, computed, onMounted } from 'vue'
 import { useStore } from 'vuex'
-import Modal from '@/components/Modal';
+import Modal from '@/components/Modal'
 import DiaryCard from '@/components/DiaryCard'
 
 export default {
@@ -32,15 +32,18 @@ export default {
     const store = useStore()
     const showModal = ref(false)
     const diaries = computed(() => store.state.diaries)
-    const toggleModel = () => {
-      showModal.value = !showModal.value
+    const closeModal = () => {
+      showModal.value = false
+    }
+    const openModal = () => {
+      showModal.value = true
     }
     onMounted(() => {
       store.dispatch('getDiaries').catch((error) => {
         console.log(error)
       })
     })
-    return { diaries, toggleModel }
+    return { diaries, showModal, openModal, closeModal }
   }
 }
 </script>
