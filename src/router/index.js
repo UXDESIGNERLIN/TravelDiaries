@@ -12,6 +12,17 @@ const routes = [
     name: 'DiaryDetail',
     props: true,
     component: () => import('../views/DiaryDetail.vue')
+  },
+  {
+    path: '/error/:error',
+    name: 'ErrorPage',
+    props: true,
+    component: () => import('../views/ErrorPage.vue')
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'Home',
+    component: () => import('../views/Home.vue')
   }
 ]
 

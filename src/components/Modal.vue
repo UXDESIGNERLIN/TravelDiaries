@@ -12,6 +12,8 @@ import submitButtonState from '@/utils/submitButtonState'
 import { v4 } from 'uuid'
 import { ref } from 'vue'
 import { useStore } from 'vuex'
+import router from '@/router'
+
 export default {
   name: 'Modal',
   emits: ['close'],
@@ -30,7 +32,10 @@ export default {
     const { isSubmitDisabled } = submitButtonState(diary.value)
     const onSubmit = () => {
       store.dispatch('postDiary', diary.value).catch((error) => {
-        console.log(error)
+        router.push({
+          name: 'ErrorPage',
+          params: { error: error }
+        })
       })
       close()
     }

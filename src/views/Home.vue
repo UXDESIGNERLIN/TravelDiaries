@@ -21,6 +21,7 @@ import { ref, computed, onMounted } from 'vue'
 import { useStore } from 'vuex'
 import Modal from '@/components/Modal'
 import DiaryCard from '@/components/DiaryCard'
+import router from '@/router'
 
 export default {
   name: 'Home',
@@ -40,7 +41,10 @@ export default {
     }
     onMounted(() => {
       store.dispatch('getDiaries').catch((error) => {
-        console.log(error)
+        router.push({
+          name: 'ErrorPage',
+          params: { error: error }
+        })
       })
     })
     return { diaries, showModal, openModal, closeModal }
