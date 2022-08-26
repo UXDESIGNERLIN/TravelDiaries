@@ -60,17 +60,13 @@ export default {
     @include in-the-middle
   }
   .Home {
-    display: flex;
-    flex-direction: column;
-    div {
-      margin: 30px;
-    }
     &__buttonContainer {
+      margin: 30px;
       position: fixed;
       left: 0;
       bottom: 0;
       width: 100%;
-      color: white;
+      background-color: white;
       text-align: center;
       display: flex;
       justify-content: center;
@@ -79,10 +75,10 @@ export default {
       }
     }
     &__DiaryCardContainer {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      overflow: auto;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-auto-rows: 100px 300px;
+      grid-gap: 10px;
     }
   }
 </style>
