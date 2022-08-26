@@ -3,7 +3,11 @@
     <div class="DiaryCard__container__img">
       <img :src="card.imgurl" :alt="card.title"/>
     </div>
-    <p class="text">{{card.title}}</p>
+    <div class="DiaryCard__container__info">
+      <p>{{card.author}}</p>
+      <p>{{card.title}}</p>
+      <p class="DiaryCard__container__info__description">{{card.description}}</p>
+    </div>
   </div>
 </template>
 
@@ -46,22 +50,30 @@ export default {
         transition: .5s ease-in-out;
         @include fullWidthfullHeight;
       }
-
     }
-    .text {
-      width: 90%;
-      font-size: 1rem;
-      opacity: 0;
-      color: $theme-color-secondary;
-      z-index: 4;
+    &__info {
       @include in-the-middle;
-      @include truncate;
+      &__description {
+        display: none;
+      }
+      p{
+        margin: 0;
+        font-size: 1rem;
+        color: $theme-color-secondary;
+      }
     }
     &:hover img{
       transform: scale(1.5);
     }
-    &:hover .text{
-      opacity: 1;
+    &:hover  &__info{
+      overflow: hidden;
+      width: 80%;
+      height: 50%;
+      &__description{
+        display: block;
+        font-size: 1rem;
+        margin: 1rem;
+      }
     }
   }
 }
