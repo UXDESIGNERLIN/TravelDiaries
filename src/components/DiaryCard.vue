@@ -1,10 +1,8 @@
 <template>
 <div class="DiaryCard">
-  <div class="DiaryCard__title">
-    <img :src="card.imgurl" width="100" height="100"/>
-    <button @click.prevent="deleteDiary">X</button>
-    <h2>{{card.title}}</h2>
-  </div>
+  <img :src="card.imgurl" width="100" height="100" :alt="card.title"/>
+  <button @click.prevent="deleteDiary">X</button>
+  <h2>{{card.title}}</h2>
 </div>
 </template>
 
@@ -18,7 +16,7 @@ export default {
   },
   setup (props) {
     const store = useStore()
-    const deletDiary = () => {
+    const deleteDiary = () => {
       store.dispatch('deleteDiary', props.card.id).catch((error) => {
         router.push({
           name: 'ErrorPage',
@@ -26,7 +24,7 @@ export default {
         })
       })
     }
-    return { deletDiary }
+    return { deleteDiary }
   }
 }
 </script>
