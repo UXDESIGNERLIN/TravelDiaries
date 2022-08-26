@@ -12,7 +12,10 @@
         <DiaryCard :card="card"/>
       </router-link>
     </div>
-    <div class="Home__add" @click="openModal"><p>+</p></div>
+    <div class="Home__buttonContainer">
+      <button>Home</button>
+      <button class="Home__add" @click="openModal">Add</button>
+    </div>
   </div>
 </template>
 
@@ -62,19 +65,20 @@ export default {
     div {
       margin: 30px;
     }
-    &__add {
+    &__buttonContainer {
       position: fixed;
-      bottom: 15px;
-      width: 50px;
-      height: 50px;
-      align-self: center;
-      border: 1px solid $theme-color;
-      border-radius: $round-border-radius;
-      box-shadow: $box-shadow;
-      cursor: pointer;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      color: white;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      button {
+        border: none;
+      }
     }
     &__DiaryCardContainer {
-      max-height: 350px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
