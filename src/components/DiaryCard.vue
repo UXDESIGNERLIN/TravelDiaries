@@ -1,9 +1,10 @@
 <template>
-<div class="DiaryCard">
-  <img :src="card.imgurl" width="100" height="100" :alt="card.title"/>
-  <button @click.prevent="deleteDiary">X</button>
-  <h2>{{card.title}}</h2>
-</div>
+  <div class="DiaryCard__container">
+    <div class="DiaryCard__container__img">
+      <img :src="card.imgurl" :alt="card.title"/>
+    </div>
+    <p class="text">{{card.title}}</p>
+  </div>
 </template>
 
 <script>
@@ -33,26 +34,38 @@ export default {
 @import "@/assets/scss/index.scss";
 
 .DiaryCard {
-  &__title {
-    margin: 0 10px;
+  &__container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    &__img {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 50%;
+        transition: .5s ease-in-out;
+      }
+
+    }
+    .text {
+      width: 90%;
+      font-size: 1rem;
+      opacity: 0;
+      color: $theme-color-secondary;
+      z-index: 4;
+      @include in-the-middle;
+      @include truncate;
+    }
+    &:hover {
+      transform: scale(1.5);
+    }
+    &:hover .text{
+      opacity: 1;
+    }
   }
-  button {
-    float: right;
-  }
-  h2 {
-    width: 90%;
-    font-size: 1rem;
-    @include in-the-middle;
-    @include truncate;
-  }
-  width: 10rem;
-  height: 10rem;
-  padding: 1rem;
-  border: 1px solid $theme-color;
-  border-radius: $border-radius;
-  box-shadow: $box-shadow;
-  margin: 1rem;
-  position: relative;
-  cursor: pointer;
 }
 </style>
