@@ -35,19 +35,16 @@ export default {
 
 .DiaryCard {
   &__container {
-    width: 100%;
-    height: 100%;
     position: relative;
+    @include fullWidthfullHeight;
     &__img {
-      width: 100%;
-      height: 100%;
       overflow: hidden;
+      @include fullWidthfullHeight;
       img {
-        width: 100%;
-        height: 100%;
         object-fit: cover;
         object-position: 50% 50%;
         transition: .5s ease-in-out;
+        @include fullWidthfullHeight;
       }
 
     }
@@ -60,7 +57,7 @@ export default {
       @include in-the-middle;
       @include truncate;
     }
-    &:hover {
+    &:hover img{
       transform: scale(1.5);
     }
     &:hover .text{
