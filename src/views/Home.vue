@@ -8,6 +8,7 @@
         :to="{ name: 'DiaryDetail', params: { id: card.id } }"
         v-for="card in diaries"
         :key="card.id"
+        :class="[`w-${card.id%1}`, `h-${card.id%4}`]"
       >
         <DiaryCard :card="card"/>
       </router-link>
@@ -66,7 +67,7 @@ export default {
       left: 0;
       bottom: 0;
       width: 100%;
-      background-color: white;
+      color: $theme-color-secondary;
       text-align: center;
       display: flex;
       justify-content: center;
@@ -76,9 +77,19 @@ export default {
     }
     &__DiaryCardContainer {
       display: grid;
-      grid-template-columns: repeat(6, 1fr);
+      grid-template-columns: repeat(3, 2fr);
       grid-auto-rows: 100px 300px;
       grid-gap: 10px;
+      grid-auto-flow: dense;
+    }
+  }
+
+  @for $var from 1 through $grid-sum {
+    .w-#{$var} {
+      grid-column: span $var;
+    }
+    .h-#{$var} {
+      grid-row: span $var;
     }
   }
 </style>
