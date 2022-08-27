@@ -15,6 +15,11 @@
   text-align: center;
   color: #2c3e50;
 }
+body {
+  margin: 20px;
+  padding: 0;
+  text-align: center;
+}
 button {
   border: 1px solid $theme-color;
   border-radius: $border-radius;
@@ -43,9 +48,6 @@ a {
       color: #42b983;
     }
   }
-}
-.FormFields {
-  width: 100%;
 }
 .error-field {
   @include dark;
