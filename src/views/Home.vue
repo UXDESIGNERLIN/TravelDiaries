@@ -77,10 +77,25 @@ export default {
     }
     &__DiaryCardContainer {
       display: grid;
-      grid-template-columns: repeat(3, 2fr);
+      grid-template-columns: repeat(1, 1fr);
       grid-auto-rows: 100px 300px;
       grid-gap: 10px;
       grid-auto-flow: dense;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .Home {
+      &__DiaryCardContainer {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+  @media (min-width: 1024px) {
+    .Home {
+      &__DiaryCardContainer {
+        grid-template-columns: repeat(3, 2fr);
+      }
     }
   }
 
