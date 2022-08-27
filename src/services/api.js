@@ -3,7 +3,7 @@ import axios from 'axios'
 export const baseUrl = 'https://uxdesignerlin-gifts.herokuapp.com'
 export const GET_DIARIES_ENDPOINT = `${baseUrl}/diaries`
 export const POST_DIARIES_ENDPOINT = `${baseUrl}/diaries`
-export const DELETE_DIARY_ENDPOINT = (id) => `${baseUrl}/diaries/${id}`
+export const DELETE_DIARY_BY_ID = (id) => `${baseUrl}/diaries/${id}`
 export const GET_DIARY_BY_ID = (id) => `${baseUrl}/diaries/${id}`
 
 export function getDiaries () {
@@ -15,7 +15,7 @@ export function postDiary (diary) {
 }
 
 export function deleteDiaryById (id) {
-  return axios.delete(GET_DIARIES_ENDPOINT(id))
+  return axios.delete(DELETE_DIARY_BY_ID(id))
 }
 
 export function getDiaryById (id) {
