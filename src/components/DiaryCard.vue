@@ -40,6 +40,7 @@ export default {
 .DiaryCard {
   &__container {
     position: relative;
+    opacity: 0.8;
     @include fullWidthfullHeight;
     &__img {
       overflow: hidden;
@@ -89,15 +90,9 @@ export default {
         z-index: 10;
       }
     }
-    &:hover::after {
-    content:'';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: inline-block;
-    background-color: rgba(0,0,0,0.5);
-    @include in-the-middle;
-  }
+    &:hover {
+      opacity: 1;
+    }
   }
 }
 </style>
