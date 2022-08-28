@@ -6,7 +6,7 @@ This is a web application for friends to exchange their travel diaries with phot
 The feature of this web application is to dynamically load the data from the endpoint to showcase photo galleries, users can hover over the images to see the description and to remove the photo card if users would like. Also there's an ADD button below for user to manipulate for adding more photo cards. After clicking into each images, users can have a blog like experience to read over the stories.🦄 
 
 
-🎥[Diary]https://user-images.githubusercontent.com/42298152/187080776-fd5be087-d57b-4ca2-b009-b7c76d6bc89b.mp4
+🎥[Diary project showcase](https://user-images.githubusercontent.com/42298152/187080776-fd5be087-d57b-4ca2-b009-b7c76d6bc89b.mp4)
 
 
 
