@@ -23,9 +23,9 @@ Client side: Vue 3, Vuex 4, jest
 Rest api: [json-server-api](https://github.com/UXDESIGNERLIN/json-server-api)
 
 ### To Improve (WIP...) 🛠️
--Use Suspense to add skeleton loading when we are loading the images
--Able to upload image to the api. Right now the images are default images
--Storybook for document the components style
+- Use Suspense to add skeleton loading when we are loading the images
+- Able to upload image to the api. Right now the images are default images
+- Storybook for document the components style
 
 ### Compiles and hot-reloads for development
 ```
