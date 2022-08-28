@@ -6,7 +6,7 @@
     <div class="DiaryCard__container__info">
       <p>{{card.title}}</p>
       <p class="DiaryCard__container__info__description">{{card.description}}</p>
-      <button @click.stop.prevent="deleteDiary">Remove</button>
+      <button @click.prevent="deleteDiary">Remove</button>
     </div>
   </div>
 </template>
@@ -41,21 +41,21 @@ export default {
   &__container {
     position: relative;
     opacity: 0.8;
-    @include fullWidthfullHeight;
+    @include full-width-full-height;
     &__img {
       overflow: hidden;
-      @include fullWidthfullHeight;
+      @include full-width-full-height;
       img {
         object-fit: cover;
         object-position: 50% 50%;
         transition: .5s ease-in-out;
         display:inline-block;
-        @include fullWidthfullHeight;
+        @include full-width-full-height;
       }
     }
     &__info {
       max-height: 200px;
-      @include in-the-middle;
+      @include relative-center;
       &__description, button {
         display: none;
       }
@@ -85,7 +85,6 @@ export default {
         left: 50%;
         transform: translateX(-50%);
         margin: 50px 0;
-        color: $theme-color-secondary;
         border: none;
         z-index: 10;
       }
