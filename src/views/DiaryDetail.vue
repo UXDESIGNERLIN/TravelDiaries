@@ -1,15 +1,9 @@
 <template>
   <div class="DiaryDetail">
-    <div class="DiaryDetail__title">
-      <h2>{{diaryDetail.title}}</h2>
-    </div>
+    <img :src="diaryDetail.imgurl" :alt="diaryDetail.title">
     <div>
-      <div class="DiaryDetail__container">
-        <h4>
-          {{diaryDetail.body}}
-        </h4>
-         <h4>{{diaryDetail.price}}</h4>
-      </div>
+      <h1>{{diaryDetail.title}}</h1>
+      <p>{{diaryDetail.description}}</p>
     </div>
   </div>
 </template>
@@ -43,22 +37,29 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/scss/index.scss";
 .DiaryDetail {
-  @include relative-center;
-  border: 1px solid $theme-color;
-  border-radius: $border-radius;
-  box-shadow: $box-shadow;
-  margin: auto;
-  width: 50%;
-  height: 50%;
-  padding: 15px;
-  &__title {
-    @include truncate
+    display: grid;
+    grid-gap: 3rem;
+  img {
+    object-fit: cover;
+    object-position: 50% 50%;
+    @include full-width-full-height;
   }
-  &__container {
-    display:flex;
-    height: 200px;
-    flex-direction: column;
+  p, h1 {
     text-align: left;
+    font-family: "Playfair Display", sans-serif;
+  }
+}
+
+@media (min-width: 768px) {
+  .DiaryDetail {
+    grid-template-columns: 1fr 3fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .DiaryDetail {
+    grid-template-columns: 1fr 1fr;
+    margin: 20px;
   }
 }
 </style>
