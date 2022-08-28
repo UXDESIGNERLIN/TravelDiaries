@@ -58,7 +58,7 @@ export default {
 <style lang="scss">
 @import "@/assets/scss/index.scss";
   .modal-content {
-    @include in-the-middle
+    @include relative-center
   }
   .Home {
     &__buttonContainer {

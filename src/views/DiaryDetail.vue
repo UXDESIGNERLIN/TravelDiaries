@@ -43,7 +43,7 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/scss/index.scss";
 .DiaryDetail {
-  @include in-the-middle;
+  @include relative-center;
   border: 1px solid $theme-color;
   border-radius: $border-radius;
   box-shadow: $box-shadow;
