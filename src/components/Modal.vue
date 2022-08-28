@@ -2,7 +2,7 @@
   <div class="Modal">
     <button @click="close" type="button"><span>X</span></button>
     <form class="Modal__form" novalidate @submit.prevent>
-      <DiaryAuthorField v-model="diary.author"/>
+      <DiaryTitleField v-model="diary.title"/>
       <DiaryDescriptionField v-model="diary.description"/>
       <button type="submit" :disabled="isSubmitDisabled" @click.prevent="onSubmit">Submit</button>
     </form>
@@ -15,13 +15,13 @@ import { v4 } from 'uuid'
 import { ref } from 'vue'
 import { useStore } from 'vuex'
 import router from '@/router'
-import DiaryAuthorField from '@/components/Form/DiaryAuthorField'
+import DiaryTitleField from '@/components/Form/DiaryTitleField'
 import DiaryDescriptionField from '@/components/Form/DiaryDescriptionField'
 
 export default {
   name: 'Modal',
   components: {
-    DiaryAuthorField,
+    DiaryTitleField,
     DiaryDescriptionField
   },
   emits: ['close'],
@@ -30,7 +30,7 @@ export default {
     const store = useStore()
     const diary = ref({
       id: v4(),
-      author: '',
+      title: '',
       description: '',
       imgurl: defaultImgurl
     })

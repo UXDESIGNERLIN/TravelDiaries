@@ -12,7 +12,7 @@ function minCharacters (fieldName, fieldValue) {
 }
 
 export default function formValidators () {
-  const validateAuthor = (fieldName, fieldValue) => {
+  const validateTitle = (fieldName, fieldValue) => {
     errors[fieldName] = isEmpty(fieldName, fieldValue)
   }
   const validateDescription = (fieldName, fieldValue) => {
@@ -22,5 +22,5 @@ export default function formValidators () {
     }
   }
 
-  return { errors, validateAuthor, validateDescription }
+  return { errors, validateTitle, validateDescription }
 }
