@@ -62,7 +62,7 @@ export default {
   }
   .Home {
     &__buttonContainer {
-      margin: 30px;
+      margin: 1rem auto;
       position: fixed;
       left: 0;
       bottom: 0;
