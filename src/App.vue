@@ -43,8 +43,14 @@ a {
 #nav {
   padding: 30px;
   a {
+    margin: 1rem auto;
     font-weight: bold;
     color: #2c3e50;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index:100;
     &.router-link-exact-active {
       color: #42b983;
     }
