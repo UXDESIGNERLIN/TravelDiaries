@@ -14,8 +14,7 @@
       </router-link>
     </div>
     <div class="Home__buttonContainer">
-      <button>Home</button>
-      <button class="Home__add" @click="openModal">Add</button>
+      <button class="Home__add" @click.stop.prevent="openModal">ADD</button>
     </div>
   </div>
 </template>
@@ -62,17 +61,18 @@ export default {
   }
   .Home {
     &__buttonContainer {
-      margin: 1rem auto;
       position: fixed;
-      left: 0;
       bottom: 0;
+      left: 0;
       width: 100%;
-      color: $theme-color-secondary;
       text-align: center;
       display: flex;
       justify-content: center;
       button {
+        margin: 1rem auto;
         border: none;
+        color: $theme-color-third;
+        font-weight: 900;
       }
     }
     &__DiaryCardContainer {
