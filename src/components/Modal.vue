@@ -1,6 +1,6 @@
 <template>
   <div class="Modal">
-    <button @click="close" type="button">X</button>
+    <button @click="close" type="button"><span>X</span></button>
     <form class="Modal__form" novalidate @submit.prevent>
       <DiaryAuthorField v-model="diary.author"/>
       <DiaryDescriptionField v-model="diary.description"/>
@@ -56,19 +56,22 @@ export default {
 @import "@/assets/scss/index.scss";
 .Modal {
   width: 50%;
-  height: 50%;
+  height: 30%;
   display: flex;
   position: fixed;
   justify-content: flex-end;
   @include fixed-center;
   background-color: rgba(0,0,0,0.9);
   overflow: auto;
+  max-width: 600px;
   &__form {
+    margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     position: fixed;
     @include relative-center;
+    @include full-width-full-height;
   }
   &__form > div {
     padding: 10px;
@@ -77,12 +80,18 @@ export default {
   button {
     padding: 10px;
     margin: 10px;
+    line-height: 50%;
     @include dark;
   }
 
   button[type="button"] {
-    height:10%;
+    max-height: 15px;
+    max-width: 30px;;
     width: 10%;
+    z-index: 10;
   }
+}
+
+@media (min-width: 768px) {
 }
 </style>

@@ -23,3 +23,17 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+@import "@/assets/scss/index.scss";
+textarea {
+  @include full-width-full-height;
+  align-items: stretch;
+}
+
+@media (min-width: 768px) {
+  .DiaryDetail {
+    grid-template-columns: 1fr 3fr;
+  }
+}
+
+</style>

@@ -23,3 +23,10 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+@import "@/assets/scss/index.scss";
+input {
+  @include full-width-full-height;
+}
+
+</style>
