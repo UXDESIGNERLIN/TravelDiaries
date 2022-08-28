@@ -1,5 +1,5 @@
 export default {
-  POST_DIARIES (state, diary) {
+  POST_DIARY (state, diary) {
     state.diaries = [...state.diaries, diary]
   },
   SET_DIARIES (state, diaries) {
