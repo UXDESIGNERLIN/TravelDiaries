@@ -16,7 +16,7 @@
   color: #2c3e50;
 }
 body {
-  margin: 20px;
+  margin: auto 2rem;
   padding: 0;
   text-align: center;
 }
@@ -24,6 +24,7 @@ button {
   border: 1px solid $theme-color;
   border-radius: $border-radius;
   background-color: transparent;
+  color: $theme-color-secondary;
   cursor: pointer;
 }
 input, textarea {
