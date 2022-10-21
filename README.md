@@ -1,4 +1,4 @@
-# Valtech-diaries-test
+# TravelDiaries
 This project is created with Vue 3 and Vuex 4 with some other dependencies such as UUID. 
 There's also jest tests covered some part of the application to showcase.
 
